@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yurt Ailesi - Ana Sayfa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    #themeToggle {
+      padding: 8px 14px;
+      background-color: white;
+      color: #2c3e50;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #themeToggle:hover {
+      background-color: #ddd;
+    }
+
+    nav {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+
+    .left {
+      flex: 3;
+    }
+
+    .right {
+      flex: 1;
+      padding-left: 20px;
+    }
+
+    .photo-box {
+      width: 100%;
+      height: 300px;
+      background-color: #ddd;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .comment-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .comment-section {
+      display: none;
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      width: 300px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment-section textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Yurt Ailesi Ana Sayfa</h1>
+    <button id="themeToggle">🌙 Tema</button>
+    <button class="comment-button" onclick="toggleComment()">💬 Yorum Yap</button>
+  </header>
+
+  <nav>
+    <a href="aileuyeleri.html">Aile Üyelerimiz</a>
+    <a href="#">Hakkımızda</a>
+    <a href="#">İletişim</a>
+  </nav>
+
+  <div class="container">
+    <div class="left">
+      <h2>Hoşgeldiniz</h2>
+      <p>Yurt ailesinin resmi web sitesine hoş geldiniz. Sağ tarafta fotoğraf alanı, yukarıda tema ve yorum butonları, yukarıdaki menüden ise aile üyeleri ve diğer sayfalara ulaşabilirsiniz.</p>
+    </div>
+
+    <div class="right">
+      <div class="photo-box">Fotoğraf Alanı</div>
+      <div class="photo-box">Fotoğraf Alanı</div>
+      <div class="photo-box">Fotoğraf Alanı</div>
+    </div>
+  </div>
+
+  <div class="comment-section" id="commentSection">
+    <h4>Yorum Yap</h4>
+    <textarea placeholder="Yorumunuzu yazın..."></textarea>
+    <button onclick="alert('Yorumunuz alındı!')">Gönder</button>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    let darkMode = false;
+
+    themeToggle.addEventListener('click', () => {
+      if (!darkMode) {
+        document.body.style.backgroundColor = '#1e1e1e';
+        document.body.style.color = '#eee';
+        themeToggle.textContent = '☀️ Aydınlık';
+      } else {
+        document.body.style.backgroundColor = '#f0f0f0';
+        document.body.style.color = '#333';
+        themeToggle.textContent = '🌙 Tema';
+      }
+      darkMode = !darkMode;
+    });
+
+    function toggleComment() {
+      const commentBox = document.getElementById('commentSection');
+      commentBox.style.display = commentBox.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

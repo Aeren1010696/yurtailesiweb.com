@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yurt Ailesi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      background-color: #2c3e50;
+      color: white;
+      padding: 40px 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #2c3e50;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .member {
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .member img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      background-color: #ddd;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ff0000;
+    }
+
+    .paragraph {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    form {
+      margin-top: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #commentList {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    #commentList p {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .member {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .member img {
+        width: 100%;
+        height: auto;
+      }
+
+      .info {
+        text-align: center;
+      }
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .dark-mode nav ul {
+      background-color: #1f1f1f;
+    }
+
+    .dark-mode nav ul li a {
+      color: #ddd;
+    }
+
+    .dark-mode .member {
+      background-color: #1e1e1e;
+    }
+
+    .dark-mode form {
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .dark-mode form input,
+    .dark-mode form textarea {
+      background-color: #333;
+      color: white;
+      border: 1px solid #555;
+    }
+
+    .dark-mode #commentList p {
+      background-color: #2a2a2a;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#anasayfa">Ana Sayfa</a></li>
+      <li><a href="#aile">Aile Üyeleri</a></li>
+      <li><a href="#yorumlar">Ziyaretçi Defteri</a></li>
+    </ul>
+  </nav>
+
+  <div style="text-align:center; margin-bottom: 30px;">
+    <button onclick="toggleTheme()">🌓 Tema Değiştir</button>
+  </div>
+
+  <header id="anasayfa">
+    <h1>Yurt Ailesine - Hoşgeldiniz</h1>
+  </header>
+
+  <div id="aile">
+
+    <div class="member">
+      <img src="neslihan.png" alt="Neslihan Yurt">
+      <div class="info">
+        <div class="name">Neslihan Yurt</div>
+        <div class="paragraph">Ailemizin sabır taşı olan Neslihan Hanım 48 yaşındadır ve Dünya güzelidir. Hem sabırlı olması hem de hiç sinirli olmaması sebebiyle evde hiç kavga çıkmaz. Köpekleri, çiçekleri ve özellikle kedileri çok sever. Aslen Çorum/Alaca 'lıdır. Hayrettin-Fatma Tonbul'un kızıdır. 4 kardeşlerdir. Arslan Yurt ile evlenmişlerdir ve 3 çocukları olmuştur. Hep neşelidir. Her yemeği güzel yapar.</div>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="sılsıl.png" alt="Sıla Yurt">
+      <div class="info">
+        <div class="name">Sıla Yurt</div>
+        <div class="paragraph">Ailemizin bonus kızı olan Sıla 20 yaşındadır. Küçüklüğünden kalan bonusluğuyla lakabını almıştır. Üniversiteye hazırlanıyordur. Hukuk okumak istiyor inşallah okur.</div>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="yaren.png" alt="Yaren Yurt">
+      <div class="info">
+        <div class="name">Yaren Yurt</div>
+        <div class="paragraph">Kardeşlerin en büyüğü olan Yaren 25 yaşındadır. Gönen’de yaşar. Karesi Holding'de satın alma müdürüdür. Maaşı bol olsa da "param yok" der :)). Çok tatlıdır.</div>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="arslan.png" alt="Arslan Yurt">
+      <div class="info">
+        <div class="name">Arslan Yurt</div>
+        <div class="paragraph">
+          Ailenin direği olan Arslan Bey 55 yaşındadır. Eyüp kaymakamıdır. Görevinde başarılıdır. İnşallah Çanakkale’de vali olacaktır. Ailemizin neşe kaynağıdır. Tatlı esprisi ve kaliteli mizahı ile ailemizin yüzünü güldürür. Aziz-Dönüş Yurt'un oğludur. Mülki idare amirliğine 1994 yılında Burdur Kaymakam Adayı olarak başladı.
+          <br><br>
+          Görevler:
+          <br>1997-2000: Trabzon/Tonya Kaymakamlığı
+          <br>2000-2002: Artvin/Yusufeli Kaymakamlığı
+          <br>2002-2004: Mardin Vali Yardımcılığı
+          <br>2004-2006: Van/Başkale Kaymakamlığı
+          <br>2006-2007: İngiltere Yüksek Lisans
+          <br>2007-2010: Kastamonu/Tosya Kaymakamlığı
+          <br>2010-2016: Bolu/Gerede Kaymakamlığı
+          <br>2016-2019: Tekirdağ/Süleymanpaşa Kaymakamlığı
+          <br>2019-2024: Balıkesir/Gönen Kaymakamlığı
+          <br><br>
+          01.07.2024 tarihli kararnameyle Eyüpsultan Kaymakamı olmuştur.
+          <br>2021'de doktora bitirerek "Dr." unvanı almıştır.
+          <br>Evli ve 3 çocuk babasıdır.
+        </div>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="eren.png" alt="Abdullah Eren Yurt">
+      <div class="info">
+        <div class="name">Abdullah Eren Yurt</div>
+        <div class="paragraph">Ailenin en küçük çocuğu olan 15 yaşındaki Eren 11. sınıfa gitmektedir. Eyüp Anadolu Lisesinde okuyup inşallah başarılı bir öğrenci olacaktır. Fenerbahçenin kendisidir. Gönen’de yaşamayı tercih ederdi. Arkadaş ortamının kötü olduğunu düşünür. Futbolu sever. Oyun oynamayı sever. Yazılıma meraklıdır ki bu siteyi kendisi yapmıştır.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <section id="yorumlar">
+    <form id="commentForm">
+      <input type="text" id="name" placeholder="Adınız" required><br>
+      <textarea id="comment" placeholder="Yorumunuz" required></textarea><br>
+      <button type="submit">Gönder</button>
+    </form>
+    <div id="commentList"></div>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    const form = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const text = document.getElementById('comment').value;
+      const newComment = `<p><strong>${name}</strong>: ${text}</p>`;
+      commentList.innerHTML += newComment;
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
